@@ -181,3 +181,11 @@ if (selected == 'Titik Gempa'):
         st.write('Magnitudo  >  5 SR')
         st.write('Magnitudo 4 - 5 SR')
         st.write('Magnitudo  <  4 SR')
+        
+        
+    st.markdown(""" <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style> """, unsafe_allow_html=True)
+    
+    st.set_page_config(page_title=’Sosialisasi Gempa’, page_icon=”🖖”)
