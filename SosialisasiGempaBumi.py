@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import folium
 import geopandas
 import leafmap.foliumap as leafmap
@@ -11,7 +12,8 @@ df1 = pd.read_csv("gempagempigisel.csv")
 df = df1.loc[:, ("tanggal", "waktu", "latitude", "longitude", "kedalaman", "magnitudo", "daerah")]
 m = leafmap.Map(location=[ -0.78927, 113.921327], tiles="Cartodb dark_matter", zoom_start=4)
 jml_gempa = df['daerah'].unique()
-contact_options = jml_gempa
+all = np.append(jml_gempa,['Tampilkan Semua'])
+contact_options = all
 
 with st.sidebar:
     selected = option_menu('Explore!',
@@ -150,6 +152,8 @@ if (selected == 'Titik Gempa'):
             st.markdown("<h1 style='text-align: center;' >Kepulauan Talaud</h1>", unsafe_allow_html=True)
         elif tempat == 'Timor Region':
             st.markdown("<h1 style='text-align: center;' >Pulau Timor</h1>", unsafe_allow_html=True)
+        elif tempat == 'Tampilkan Semua':
+            geo_df_list = [[point.xy[1][0], point.xy[0][0]] for point in geo_df.geometry]
     i = 0
     for Kordinat in geo_df_list:
         if geo_df.magnitudo[i] >= 5:
