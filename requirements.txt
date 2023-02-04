@@ -4,3 +4,4 @@ folium==0.14.0
 geopandas==0.12.2
 leafmap==0.15.0
 plotly_express==0.4.1
+streamlit_option_menu==0.3.2
