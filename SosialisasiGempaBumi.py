@@ -188,4 +188,4 @@ if (selected == 'Titik Gempa'):
     footer {visibility: hidden;}
     </style> """, unsafe_allow_html=True)
     
-    st.set_page_config(page_title=’Sosialisasi Gempa’, page_icon=”🖖”)
+    st.set_page_config(page_title="Sosialisasi Gempa", page_icon="🖖")
