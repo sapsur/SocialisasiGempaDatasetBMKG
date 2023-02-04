@@ -5,7 +5,7 @@ import geopandas
 import leafmap.foliumap as leafmap
 import plotly_express as px
 from streamlit_option_menu import option_menu
-
+st.set_page_config(page_title="Sosialisasi Gempa", page_icon="🖖")
 df1 = pd.read_csv("gempagempigisel.csv")
 df = df1.loc[:, ("tanggal", "waktu", "latitude", "longitude", "kedalaman", "magnitudo", "daerah")]
 m = leafmap.Map(location=[ -0.78927, 113.921327], tiles="Cartodb dark_matter", zoom_start=4)
@@ -188,4 +188,4 @@ if (selected == 'Titik Gempa'):
     footer {visibility: hidden;}
     </style> """, unsafe_allow_html=True)
     
-    st.set_page_config(page_title="Sosialisasi Gempa", page_icon="🖖")
+  
