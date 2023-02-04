@@ -1,0 +1,6 @@
+pandas==1.5.1
+streamlit
+folium==0.14.0
+geopandas==0.12.2
+leafmap==0.15.0
+plotly_express==0.4.1
